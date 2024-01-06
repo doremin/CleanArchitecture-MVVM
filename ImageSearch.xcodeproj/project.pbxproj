@@ -12,7 +12,21 @@
 		175AD1652B48C57200CA2ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175AD1642B48C57200CA2ABE /* Assets.xcassets */; };
 		175AD1682B48C57200CA2ABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175AD1662B48C57200CA2ABE /* LaunchScreen.storyboard */; };
 		175AD1712B48CA5C00CA2ABE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AD1702B48CA5C00CA2ABE /* SceneDelegate.swift */; };
+		175AD17F2B49E80800CA2ABE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AD17E2B49E80800CA2ABE /* Logger.swift */; };
+		175AD1812B49F0A200CA2ABE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AD1802B49F0A200CA2ABE /* main.swift */; };
+		175AD1892B49F0FB00CA2ABE /* ImageSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AD1882B49F0FB00CA2ABE /* ImageSearchTests.swift */; };
+		175AD1912B49F17800CA2ABE /* StubAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AD1902B49F17800CA2ABE /* StubAppDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		175AD18A2B49F0FB00CA2ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 175AD1532B48C57100CA2ABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 175AD15A2B48C57100CA2ABE;
+			remoteInfo = ImageSearch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		175AD15B2B48C57100CA2ABE /* ImageSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +36,22 @@
 		175AD1672B48C57200CA2ABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		175AD1692B48C57200CA2ABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		175AD1702B48CA5C00CA2ABE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		175AD17E2B49E80800CA2ABE /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		175AD1802B49F0A200CA2ABE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		175AD1862B49F0FB00CA2ABE /* ImageSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		175AD1882B49F0FB00CA2ABE /* ImageSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchTests.swift; sourceTree = "<group>"; };
+		175AD1902B49F17800CA2ABE /* StubAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubAppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		175AD1582B48C57100CA2ABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		175AD1832B49F0FB00CA2ABE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				175AD15D2B48C57100CA2ABE /* ImageSearch */,
+				175AD1872B49F0FB00CA2ABE /* ImageSearchTests */,
 				175AD15C2B48C57100CA2ABE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				175AD15B2B48C57100CA2ABE /* ImageSearch.app */,
+				175AD1862B49F0FB00CA2ABE /* ImageSearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +82,8 @@
 		175AD15D2B48C57100CA2ABE /* ImageSearch */ = {
 			isa = PBXGroup;
 			children = (
+				175AD1802B49F0A200CA2ABE /* main.swift */,
+				175AD17D2B49E7FF00CA2ABE /* Logging */,
 				175AD16F2B48C6AB00CA2ABE /* Application */,
 				175AD1622B48C57100CA2ABE /* ViewController.swift */,
 				175AD1642B48C57200CA2ABE /* Assets.xcassets */,
@@ -70,6 +100,31 @@
 				175AD1702B48CA5C00CA2ABE /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		175AD17D2B49E7FF00CA2ABE /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				175AD17E2B49E80800CA2ABE /* Logger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		175AD1872B49F0FB00CA2ABE /* ImageSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				175AD18F2B49F13400CA2ABE /* Stubs */,
+				175AD1882B49F0FB00CA2ABE /* ImageSearchTests.swift */,
+			);
+			path = ImageSearchTests;
+			sourceTree = "<group>";
+		};
+		175AD18F2B49F13400CA2ABE /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				175AD1902B49F17800CA2ABE /* StubAppDelegate.swift */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,6 +147,24 @@
 			productReference = 175AD15B2B48C57100CA2ABE /* ImageSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		175AD1852B49F0FB00CA2ABE /* ImageSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 175AD18C2B49F0FB00CA2ABE /* Build configuration list for PBXNativeTarget "ImageSearchTests" */;
+			buildPhases = (
+				175AD1822B49F0FB00CA2ABE /* Sources */,
+				175AD1832B49F0FB00CA2ABE /* Frameworks */,
+				175AD1842B49F0FB00CA2ABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				175AD18B2B49F0FB00CA2ABE /* PBXTargetDependency */,
+			);
+			name = ImageSearchTests;
+			productName = ImageSearchTests;
+			productReference = 175AD1862B49F0FB00CA2ABE /* ImageSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -104,6 +177,10 @@
 				TargetAttributes = {
 					175AD15A2B48C57100CA2ABE = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					175AD1852B49F0FB00CA2ABE = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 175AD15A2B48C57100CA2ABE;
 					};
 				};
 			};
@@ -121,6 +198,7 @@
 			projectRoot = "";
 			targets = (
 				175AD15A2B48C57100CA2ABE /* ImageSearch */,
+				175AD1852B49F0FB00CA2ABE /* ImageSearchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +213,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		175AD1842B49F0FB00CA2ABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -143,12 +228,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				175AD1632B48C57100CA2ABE /* ViewController.swift in Sources */,
+				175AD1812B49F0A200CA2ABE /* main.swift in Sources */,
+				175AD17F2B49E80800CA2ABE /* Logger.swift in Sources */,
 				175AD15F2B48C57100CA2ABE /* AppDelegate.swift in Sources */,
 				175AD1712B48CA5C00CA2ABE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		175AD1822B49F0FB00CA2ABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				175AD1912B49F17800CA2ABE /* StubAppDelegate.swift in Sources */,
+				175AD1892B49F0FB00CA2ABE /* ImageSearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		175AD18B2B49F0FB00CA2ABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 175AD15A2B48C57100CA2ABE /* ImageSearch */;
+			targetProxy = 175AD18A2B49F0FB00CA2ABE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		175AD1662B48C57200CA2ABE /* LaunchScreen.storyboard */ = {
@@ -347,6 +451,42 @@
 			};
 			name = Release;
 		};
+		175AD18D2B49F0FB00CA2ABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G37F7HJP2B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doremin.ImageSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ImageSearch";
+			};
+			name = Debug;
+		};
+		175AD18E2B49F0FB00CA2ABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G37F7HJP2B;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doremin.ImageSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ImageSearch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -364,6 +504,15 @@
 			buildConfigurations = (
 				175AD16D2B48C57200CA2ABE /* Debug */,
 				175AD16E2B48C57200CA2ABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		175AD18C2B49F0FB00CA2ABE /* Build configuration list for PBXNativeTarget "ImageSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				175AD18D2B49F0FB00CA2ABE /* Debug */,
+				175AD18E2B49F0FB00CA2ABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
