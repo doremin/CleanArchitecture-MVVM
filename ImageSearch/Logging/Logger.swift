@@ -13,12 +13,13 @@ protocol Loggable {
   var category: String { get }
   var osLog: OSLog { get }
   
-  func log(message: String, type: OSLogType)
+  func log(message: String, type: OSLogType, file: StaticString, line: UInt)
 }
 
 extension Loggable {
-  func log(message: String, type: OSLogType) {
-    os_log("%@", log: osLog, type: type, message)
+  func log(message: String, type: OSLogType, file: StaticString = #file, line: UInt = #line) {
+    let log = "\(file):\(line) ".appending(message)
+    os_log("%@", log: osLog, type: type, log)
   }
 }
 
