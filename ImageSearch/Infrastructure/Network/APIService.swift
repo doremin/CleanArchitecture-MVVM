@@ -18,8 +18,8 @@ enum HTTPMethod: String {
 enum APIError: Error {
   case invalidURL
   case jsonDecodeFail
-  case generic
-  case notFound
+  case generic(statusCode: Int)
+  case castingFail
 }
 
 extension APIError: LocalizedError {
@@ -29,8 +29,6 @@ extension APIError: LocalizedError {
       return NSLocalizedString("Invalid URL", comment: "Invalid URL")
     case .jsonDecodeFail:
       return NSLocalizedString("JSON Decode Fail", comment: "JSON Decode Fail")
-    case .notFound:
-      return NSLocalizedString("Not Found", comment: "Not Found")
     default:
       return NSLocalizedString("Generic error", comment: "Generic error")
     }
@@ -40,12 +38,12 @@ extension APIError: LocalizedError {
 class APIService {
   
   let session: URLSession
-  let config: URLSessionConfiguration
+  let config: RequestConfigurable
   let logger: NetworkLoggable
   
   init(
     session: URLSession = .shared,
-    config: URLSessionConfiguration = .default,
+    config: RequestConfigurable,
     logger: NetworkLoggable = NetworkLogger())
   {
     self.session = session
@@ -54,24 +52,26 @@ class APIService {
   }
   
   func request<T: Decodable>(endpoint: Endpoint) async throws -> T {
-    do {
-      let request = try endpoint.urlRequest()
-      let (data, response) = try await session.data(for: request)
-      
-      guard let httpResponse = response as? HTTPURLResponse else {
-        throw APIError.generic
-      }
-      
-      if (400 ..< 500).contains(httpResponse.statusCode) {
-        throw APIError.notFound
-      }
-      
-      let decodedData: T = try jsonDecode(data: data)
-      
-      return decodedData
-    } catch {
-      logger.log(error: error)
-      throw error
+    let request = try endpoint.urlRequest(config: config)
+    let (data, response) = try await session.data(for: request)
+    
+    guard let httpResponse = response as? HTTPURLResponse else {
+      throw APIError.castingFail
+    }
+    
+    try validateStatusCode(statusCode: httpResponse.statusCode)
+    
+    let decodedData: T = try jsonDecode(data: data)
+    
+    return decodedData
+  }
+  
+  private func validateStatusCode(statusCode: Int) throws {
+    switch statusCode {
+    case (200 ..< 300):
+      return
+    default:
+      throw APIError.generic(statusCode: statusCode)
     }
   }
   
@@ -83,33 +83,5 @@ class APIService {
     } catch {
       throw APIError.jsonDecodeFail
     }
-  }
-}
-
-struct Endpoint {
-  let path: String
-  let method: HTTPMethod
-  let baseURL: URL
-  
-  func url() throws -> URL {
-    let baseURLString = baseURL.absoluteString.last != "/"
-    ? baseURL.absoluteString + "/"
-    : baseURL.absoluteString
-    
-    let endpoint = baseURLString.appending(path)
-    
-    guard let url = URL(string: endpoint) else {
-      throw APIError.invalidURL
-    }
-    
-    return url
-  }
-  
-  func urlRequest() throws -> URLRequest {
-    let url = try self.url()
-    var request = URLRequest(url: url)
-    request.httpMethod = method.rawValue
-    
-    return request
   }
 }

@@ -22,6 +22,10 @@
 		175AD1A62B4C421D00CA2ABE /* PhotoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AD1A52B4C421D00CA2ABE /* PhotoResponseDTO.swift */; };
 		175AD1AA2B4C61C400CA2ABE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175AD1A92B4C61C400CA2ABE /* APIService.swift */; };
 		175AD1AC2B4C71F400CA2ABE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 175AD1AB2B4C71F400CA2ABE /* data.json */; };
+		1772B2372B534E63004D6D9F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B2362B534E63004D6D9F /* Endpoint.swift */; };
+		1772B23B2B535044004D6D9F /* PhotoRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B23A2B535044004D6D9F /* PhotoRespository.swift */; };
+		1772B23D2B53525F004D6D9F /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B23C2B53525F004D6D9F /* APIEndpoints.swift */; };
+		1772B23F2B5352E2004D6D9F /* PhotoRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B23E2B5352E2004D6D9F /* PhotoRequestDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		175AD1A52B4C421D00CA2ABE /* PhotoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponseDTO.swift; sourceTree = "<group>"; };
 		175AD1A92B4C61C400CA2ABE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		175AD1AB2B4C71F400CA2ABE /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		1772B2362B534E63004D6D9F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		1772B23A2B535044004D6D9F /* PhotoRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRespository.swift; sourceTree = "<group>"; };
+		1772B23C2B53525F004D6D9F /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		1772B23E2B5352E2004D6D9F /* PhotoRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,8 @@
 		175AD19B2B4A9BEA00CA2ABE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1772B2392B535037004D6D9F /* Repositories */,
+				1772B2382B534F71004D6D9F /* Network */,
 				175AD1A42B4C421000CA2ABE /* Mapping */,
 			);
 			path = Data;
@@ -181,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				175AD1A52B4C421D00CA2ABE /* PhotoResponseDTO.swift */,
+				1772B23E2B5352E2004D6D9F /* PhotoRequestDTO.swift */,
 			);
 			path = Mapping;
 			sourceTree = "<group>";
@@ -197,8 +208,25 @@
 			isa = PBXGroup;
 			children = (
 				175AD1A92B4C61C400CA2ABE /* APIService.swift */,
+				1772B2362B534E63004D6D9F /* Endpoint.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		1772B2382B534F71004D6D9F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1772B23C2B53525F004D6D9F /* APIEndpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1772B2392B535037004D6D9F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1772B23A2B535044004D6D9F /* PhotoRespository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,9 +336,13 @@
 				175AD1812B49F0A200CA2ABE /* main.swift in Sources */,
 				175AD19F2B4C3D7D00CA2ABE /* PhotosRepository.swift in Sources */,
 				175AD17F2B49E80800CA2ABE /* Logger.swift in Sources */,
+				1772B23B2B535044004D6D9F /* PhotoRespository.swift in Sources */,
 				175AD1AA2B4C61C400CA2ABE /* APIService.swift in Sources */,
+				1772B23D2B53525F004D6D9F /* APIEndpoints.swift in Sources */,
 				175AD15F2B48C57100CA2ABE /* AppDelegate.swift in Sources */,
 				175AD1712B48CA5C00CA2ABE /* SceneDelegate.swift in Sources */,
+				1772B2372B534E63004D6D9F /* Endpoint.swift in Sources */,
+				1772B23F2B5352E2004D6D9F /* PhotoRequestDTO.swift in Sources */,
 				175AD1A62B4C421D00CA2ABE /* PhotoResponseDTO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
