@@ -26,6 +26,7 @@
 		1772B23B2B535044004D6D9F /* PhotoRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B23A2B535044004D6D9F /* PhotoRespository.swift */; };
 		1772B23D2B53525F004D6D9F /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B23C2B53525F004D6D9F /* APIEndpoints.swift */; };
 		1772B23F2B5352E2004D6D9F /* PhotoRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B23E2B5352E2004D6D9F /* PhotoRequestDTO.swift */; };
+		1772B2442B5574D2004D6D9F /* SearchPhotosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1772B2432B5574D2004D6D9F /* SearchPhotosUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		1772B23A2B535044004D6D9F /* PhotoRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRespository.swift; sourceTree = "<group>"; };
 		1772B23C2B53525F004D6D9F /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		1772B23E2B5352E2004D6D9F /* PhotoRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestDTO.swift; sourceTree = "<group>"; };
+		1772B2432B5574D2004D6D9F /* SearchPhotosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotosUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		175AD19A2B4A9BCA00CA2ABE /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				1772B2402B5574A0004D6D9F /* UseCases */,
 				175AD19D2B4C346500CA2ABE /* Interfaces */,
 				175AD19C2B4A9C4800CA2ABE /* Entities */,
 			);
@@ -227,6 +230,14 @@
 				1772B23A2B535044004D6D9F /* PhotoRespository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1772B2402B5574A0004D6D9F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1772B2432B5574D2004D6D9F /* SearchPhotosUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1772B2442B5574D2004D6D9F /* SearchPhotosUseCase.swift in Sources */,
 				175AD1A32B4C40E000CA2ABE /* PhotosPage.swift in Sources */,
 				175AD1A12B4C409700CA2ABE /* PhotoQuery.swift in Sources */,
 				175AD1632B48C57100CA2ABE /* ViewController.swift in Sources */,
