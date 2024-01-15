@@ -19,7 +19,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
     window = UIWindow(windowScene: windowScene)
-    window?.rootViewController = ViewController()
+    
+    let config = RequestConfig(
+      baseURLString: "https://api.pexels.com",
+      headers: [
+        "Authorization": "UxK7zU4UqLID36VtnkvvJZZGdrHxAQzhKJ4HRFC9sLh0Pt5PnRDzkpiE"
+      ])
+    let service = APIService(config: config)
+    let repository = PhotosRepositoryImpl(service: service)
+    let usecase = SearchPhotosUseCaseImpl(photosRepository: repository)
+    let viewModel = PhotosListViewModel(useCase: usecase)
+    window?.rootViewController = PhotosListViewController(viewModel: viewModel)
     window?.makeKeyAndVisible()
   }
 }
