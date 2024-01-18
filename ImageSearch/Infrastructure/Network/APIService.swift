@@ -53,10 +53,13 @@ class APIService {
   
   func request<T: Decodable>(endpoint: Endpoint) async throws -> T {
     let request = try endpoint.urlRequest(config: config)
+    logger.log(request: request)
     let (data, response) = try await session.data(for: request)
     
     guard let httpResponse = response as? HTTPURLResponse else {
-      throw APIError.castingFail
+      let error = APIError.castingFail
+      logger.log(error: error)
+      throw error
     }
     
     try validateStatusCode(statusCode: httpResponse.statusCode)

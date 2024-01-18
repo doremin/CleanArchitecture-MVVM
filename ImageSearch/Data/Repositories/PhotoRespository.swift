@@ -19,7 +19,7 @@ final class PhotosRepositoryImpl {
 
 extension PhotosRepositoryImpl: PhotosRepository {
   func fetchPhotos(query: PhotoQuery, page: Int) async throws -> PhotosPage {
-    let requestDTO = PhotoRequestDTO(query: query.query, page: page, perPage: 15)
+    let requestDTO = PhotoRequestDTO(query: query.query, page: page, perPage: 7)
     
     let endpoint = APIEndpoints.getPhotos(with: requestDTO)
     let response: PhotoResponseDTO = try await service.request(endpoint: endpoint)

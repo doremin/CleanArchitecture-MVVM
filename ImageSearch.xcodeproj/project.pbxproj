@@ -567,7 +567,7 @@
 		175AD16D2B48C57200CA2ABE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				API_BASE_URL = "https://www.pexels.com";
+				API_BASE_URL = "https://api.pexels.com";
 				API_KEY = UxK7zU4UqLID36VtnkvvJZZGdrHxAQzhKJ4HRFC9sLh0Pt5PnRDzkpiE;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -600,7 +600,7 @@
 		175AD16E2B48C57200CA2ABE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				API_BASE_URL = "https://www.pexels.com";
+				API_BASE_URL = "https://api.pexels.com";
 				API_KEY = UxK7zU4UqLID36VtnkvvJZZGdrHxAQzhKJ4HRFC9sLh0Pt5PnRDzkpiE;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

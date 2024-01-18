@@ -20,10 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     window = UIWindow(windowScene: windowScene)
     
+    guard let baseURLString = stringFromInfo(key: "BaseURL") else { return }
+    guard let apiKey = stringFromInfo(key: "APIKey") else { return }
+    
     let config = RequestConfig(
-      baseURLString: "https://api.pexels.com",
+      baseURLString: baseURLString,
+      timeoutInterval: 5,
       headers: [
-        "Authorization": "UxK7zU4UqLID36VtnkvvJZZGdrHxAQzhKJ4HRFC9sLh0Pt5PnRDzkpiE"
+        "Authorization": apiKey
       ])
     let service = APIService(config: config)
     let repository = PhotosRepositoryImpl(service: service)
@@ -31,5 +35,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let viewModel = PhotosListViewModel(useCase: usecase)
     window?.rootViewController = PhotosListViewController(viewModel: viewModel)
     window?.makeKeyAndVisible()
+  }
+  
+  private func stringFromInfo(key: String) -> String? {
+    guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String else {
+      return nil
+    }
+    
+    return value
   }
 }
